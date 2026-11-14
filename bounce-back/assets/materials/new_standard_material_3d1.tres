@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://cmjg5aj7tidgk"]
 
-[ext_resource type="Texture2D" uid="uid://bvs761yflvlij" path="res://assets/textures/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA3L21vdGFybzdfM2RfcmVuZGVyX2NhcnRvb25fc3R5bGVfb2ZfYV9ncmFuaXRlX2Z1bGxfd2FsbF9jYXJ0b29uX19iYjNlMjQ5Yy01YzgxLTQ0N2MtOTRkNi00Y2U3NmY2YWI2NTQucG5n.jpg" id="1_qmiah"]
+[ext_resource type="Texture2D" uid="uid://bvs761yflvlij" path="res://assets/textures/brickwall.jpg" id="1_qmiah"]
 
 [resource]
 metallic = 1.0

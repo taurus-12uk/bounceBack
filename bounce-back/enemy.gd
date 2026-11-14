@@ -3,6 +3,17 @@ extends CharacterBody3D
 @export var movement_speed: float = 4.0
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 
+var health = 50
+
+func take_damage(amount):
+
+	health -= amount
+
+	print(name, " Health: ", health)
+
+	if health <= 0:
+		queue_free()
+
 func _ready() -> void:
 	# Set the target position in world space
 	navigation_agent.target_position = Vector3(10, 0, 10)
