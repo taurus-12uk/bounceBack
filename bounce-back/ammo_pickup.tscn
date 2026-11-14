@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ievkkq86e7rq"]
+
+[ext_resource type="Script" uid="uid://wylc3xfcit80" path="res://ammo_pickup.gd" id="1_fs8dk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mgcp0"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_7x8or"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_edjt2"]
+
+[node name="AmmoPickup" type="RigidBody3D" unique_id=477633197]
+script = ExtResource("1_fs8dk")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=230943615]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1581544956]
+shape = SubResource("SphereShape3D_mgcp0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=317797643]
+mesh = SubResource("SphereMesh_7x8or")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1456261292]
+shape = SubResource("SphereShape3D_edjt2")

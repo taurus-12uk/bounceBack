@@ -1,6 +1,18 @@
-
 extends CharacterBody3D
+var health := 100
+var ammo := 1
 
+func take_damage(amount):
+
+	health -= amount
+
+	print("Player Health: ", health)
+
+	if health <= 0:
+		queue_free()
+
+	if health <= 0:
+		queue_free()
 const SPEED = 1.0
 const JUMP_VELOCITY = 4.5
 const MOUSE_SENSITIVITY = 0.002
