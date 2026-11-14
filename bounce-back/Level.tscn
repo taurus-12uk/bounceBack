@@ -20,6 +20,7 @@ background_mode = 2
 [node name="Level" type="Node3D" unique_id=1735142640]
 
 [node name="player" parent="." unique_id=1403002175 instance=ExtResource("1_bexhn")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.0188293, 0.6442484, 0)
 
 [node name="Node3D" type="Node3D" parent="." unique_id=679336077]
 transform = Transform3D(3.866436, 0, 0, 0, 0.20512502, 0, 0, 0, 4.1690598, 0, 0, 0)
@@ -151,4 +152,4 @@ shape = SubResource("BoxShape3D_edjt2")
 environment = SubResource("Environment_3quwm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1822115764]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.8732994, 0)
+transform = Transform3D(1, 0, 0, 0, 0.77273357, 0.6347305, 0, -0.6347305, 0.77273357, 0, 2.6820571, 2.7663016)
