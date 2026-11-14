@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://h73clw2lncha"]
+
+[ext_resource type="Script" uid="uid://d1of0irgwbq35" path="res://scripts/ammo.gd" id="1_x4hal"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_3quwm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3quwm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_r4bg2"]
+
+[node name="ammo" type="Node3D" unique_id=157647726]
+script = ExtResource("1_x4hal")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=467862089]
+mesh = SubResource("SphereMesh_3quwm")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="MeshInstance3D" unique_id=2093650880]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/RigidBody3D" unique_id=1634845544]
+shape = SubResource("SphereShape3D_3quwm")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=2141922060]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2051343230]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+shape = SubResource("SphereShape3D_r4bg2")
