@@ -40,10 +40,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.032958984, 0)
 shape = SubResource("BoxShape3D_bexhn")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="Node3D" unique_id=1362233930]
-transform = Transform3D(-8.742278e-09, 0, 0.02, 0, 3.8649993, 0, -0.19999997, 0, -8.742276e-10, 0.065, 1.9814159, 0.38699856)
+transform = Transform3D(-8.742278e-09, 0, 0.02, 0, 3.864999, 0, -0.19999996, 0, -8.742275e-10, 0.065, 2.356391, 0.38699853)
 mesh = SubResource("BoxMesh_qhyq2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D9" unique_id=1323989404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.032958984, 0)
+shape = SubResource("BoxShape3D_bexhn")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Node3D" unique_id=357509717]
+transform = Transform3D(-8.742278e-09, 0, 0.02, 0, 3.8649983, 0, -0.19999993, 0, -8.742274e-10, -0.18582481, 2.3563905, -0.37891608)
+mesh = SubResource("BoxMesh_qhyq2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D10" unique_id=710369181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.032958984, 0)
+shape = SubResource("BoxShape3D_bexhn")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Node3D" unique_id=602880750]
+transform = Transform3D(-0.19999991, 0, -1.7484552e-09, 0, 3.8649979, 0, 1.748455e-08, 0, -0.020000001, -0.18582481, 2.3563898, -0.088309154)
+mesh = SubResource("BoxMesh_qhyq2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D12" unique_id=1472131020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.032958984, 0)
+shape = SubResource("BoxShape3D_bexhn")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Node3D" unique_id=1194926609]
+transform = Transform3D(-8.742278e-09, 0, 0.02, 0, 3.8649988, 0, -0.19999994, 0, -8.7422747e-10, -0.18582481, 2.3563907, 0.3869985)
+mesh = SubResource("BoxMesh_qhyq2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D11" unique_id=1884668892]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.032958984, 0)
 shape = SubResource("BoxShape3D_bexhn")
 
