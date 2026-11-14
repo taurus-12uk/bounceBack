@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b1isph5kq7rfj"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3quwm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r4bg2"]
+
+[node name="player" type="CharacterBody3D" unique_id=1403002175]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2023535370]
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=1394111332]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1355007928]
+mesh = SubResource("CapsuleMesh_3quwm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D" unique_id=312285487]
+shape = SubResource("CapsuleShape3D_r4bg2")
