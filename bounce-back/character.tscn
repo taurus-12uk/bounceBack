@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c5whqfiusxfsr"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_3quwm"]
+[ext_resource type="Script" uid="uid://dmq2dq7vom5yq" path="res://scripts/character.gd" id="1_glpr6"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r4bg2"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3quwm"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_qh6to"]
 
@@ -14,7 +14,10 @@ height = 2.4892578
 [sub_resource type="CylinderMesh" id="CylinderMesh_edjt2"]
 height = 0.7784424
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r4bg2"]
+
 [node name="player" type="CharacterBody3D" unique_id=1403002175]
+script = ExtResource("1_glpr6")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2023535370]
 
@@ -23,10 +26,8 @@ height = 0.7784424
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1355007928]
 mesh = SubResource("CapsuleMesh_3quwm")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D" unique_id=312285487]
-shape = SubResource("CapsuleShape3D_r4bg2")
-
 [node name="gun" type="Node3D" parent="." unique_id=1371866996]
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="gun" unique_id=1414482268]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 2.597, 0, -1.192)
@@ -43,3 +44,6 @@ mesh = SubResource("SphereMesh_7x8or")
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="gun" unique_id=969216002]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 4.3428864, -0.7441155, -1.2349861)
 mesh = SubResource("CylinderMesh_edjt2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=312285487]
+shape = SubResource("CapsuleShape3D_r4bg2")
