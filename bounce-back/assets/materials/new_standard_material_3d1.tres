@@ -3,5 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bvs761yflvlij" path="res://assets/textures/brickwall.jpg" id="1_qmiah"]
 
 [resource]
+albedo_color = Color(0.53436106, 0.5343611, 0.5343609, 1)
 metallic = 1.0
 metallic_texture = ExtResource("1_qmiah")
+uv1_scale = Vector3(2, 2, 2)
