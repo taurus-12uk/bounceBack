@@ -27,6 +27,7 @@ script = ExtResource("1_glpr6")
 mesh = SubResource("CapsuleMesh_3quwm")
 
 [node name="gun" type="Node3D" parent="." unique_id=1371866996]
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="gun" unique_id=1414482268]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 2.597, 0, -1.192)
