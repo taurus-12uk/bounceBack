@@ -1,30 +1,39 @@
 extends CharacterBody3D
 
-@export var movement_speed: float = 4.0
-@onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
+@export var speed := 5.0
 
-var health = 50
+var health := 50
+var player
+
+@onready var navigation_agent = $NavigationAgent3D
+
+
+func _ready():
+
+	player = get_tree().get_first_node_in_group("player")
+
+
+func _physics_process(delta):
+
+	if player == null:
+		return
+
+	navigation_agent.target_position = player.global_position
+
+	var next_position = navigation_agent.get_next_path_position()
+
+	var direction = global_position.direction_to(next_position)
+
+	velocity = direction * speed
+
+	move_and_slide()
+
 
 func take_damage(amount):
 
 	health -= amount
 
-	print(name, " Health: ", health)
+	print(name, " HP: ", health)
 
 	if health <= 0:
 		queue_free()
-
-func _ready() -> void:
-	# Set the target position in world space
-	navigation_agent.target_position = Vector3(10, 0, 10)
-
-func _physics_process(delta: float) -> void:
-	if navigation_agent.is_navigation_finished():
-		return
-
-	var current_agent_position: Vector3 = global_transform.origin
-	var next_path_position: Vector3 = navigation_agent.get_next_path_position()
-
-	var new_velocity: Vector3 = (next_path_position - current_agent_position).normalized() * movement_speed
-	velocity = new_velocity
-	move_and_slide()

@@ -1,51 +1,113 @@
 extends CharacterBody3D
-var health := 100
-var ammo := 1
-
-func take_damage(amount):
-
-	health -= amount
-
-	print("Player Health: ", health)
-
-	if health <= 0:
-		queue_free()
-
-	if health <= 0:
-		queue_free()
-const SPEED = 1.0
-const JUMP_VELOCITY = 3.0
-const MOUSE_SENSITIVITY = 0.002
 
 @onready var head = $Head
 
-func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+@export var ammo_scene: PackedScene
 
-func _unhandled_input(event):
-	if event is InputEventMouseMotion:
-		rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
-		head.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
-		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+const SPEED = 5.0
+const JUMP_VELOCITY = 3.0
+const MOUSE_SENSITIVITY = 0.002
+const CONTROLLER_SENSITIVITY = 2.5
 
-	if event.is_action_pressed("ui_cancel"):
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+var health := 100
+var ammo := 1
 
 func _physics_process(delta: float) -> void:
+
+	# Shoot
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
+
+	# Controller look
+	var look_input := Input.get_vector(
+		"look_left",
+		"look_right",
+		"look_up",
+		"look_down"
+	)
+
+	if look_input.length() > 0.05:
+		rotate_y(-look_input.x * CONTROLLER_SENSITIVITY * delta)
+
+		head.rotate_x(
+			-look_input.y * CONTROLLER_SENSITIVITY * delta
+		)
+
+		head.rotation.x = clamp(
+			head.rotation.x,
+			deg_to_rad(-90),
+			deg_to_rad(90)
+		)
+
+	# Gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	# Jump
+	if (
+		Input.is_action_just_pressed("ui_accept")
+		or Input.is_action_just_pressed("jump")
+	) and is_on_floor():
+
 		velocity.y = JUMP_VELOCITY
 
-	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	# Movement
+	var input_dir := Input.get_vector(
+		"ui_left",
+		"ui_right",
+		"ui_up",
+		"ui_down"
+	)
+
+	var direction := (
+		transform.basis *
+		Vector3(input_dir.x, 0, input_dir.y)
+	).normalized()
 
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(
+			velocity.x,
+			0,
+			SPEED
+		)
+
+		velocity.z = move_toward(
+			velocity.z,
+			0,
+			SPEED
+		)
 
 	move_and_slide()
+
+
+func shoot():
+
+	if ammo_scene == null:
+		print("Ammo scene not assigned!")
+		return
+
+	var new_ammo = ammo_scene.instantiate()
+
+	get_tree().current_scene.add_child(new_ammo)
+
+	new_ammo.global_position = (
+		head.global_position
+		+ (-head.global_transform.basis.z * 2.0)
+	)
+
+	new_ammo.global_rotation = head.global_rotation
+
+	print("Shot fired!")
+
+
+func take_damage(amount):
+
+	health -= amount
+
+	print("Player HP: ", health)
+
+	if health <= 0:
+		queue_free()
