@@ -23,6 +23,7 @@ height = 1.6298828
 radius = 0.7988281
 
 [node name="enemy" type="CharacterBody3D" unique_id=1266374862]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.38488817, 0)
 script = ExtResource("1_7k104")
 
 [node name="slime_mesh" type="Node3D" parent="." unique_id=515193054]
