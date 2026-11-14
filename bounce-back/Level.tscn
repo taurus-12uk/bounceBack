@@ -16,7 +16,6 @@ size = Vector3(0.84954834, 0.93408203, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_edjt2"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t7iv1"]
-panorama = ExtResource("2_t7iv1")
 
 [sub_resource type="Sky" id="Sky_bexhn"]
 sky_material = SubResource("PanoramaSkyMaterial_t7iv1")
