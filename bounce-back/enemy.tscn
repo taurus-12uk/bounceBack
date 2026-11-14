@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dam3pa0nosddg"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7x8or"]
+radius = 0.8046875
+height = 1.609375
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mgcp0"]
+height = 0.7448578
+
+[node name="enemy" type="Node3D" unique_id=758909649]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=366153564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019255757, -0.4636314, 0)
+mesh = SubResource("CapsuleMesh_7x8or")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1981147035]
+transform = Transform3D(1.5800145, 0, 0, 0, 1.0000007, 0, 0, 0, 1.611385, -0.0061632395, -0.87945527, 0)
+mesh = SubResource("CylinderMesh_mgcp0")
