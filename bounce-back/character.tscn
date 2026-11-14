@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c5whqfiusxfsr"]
 
 [ext_resource type="Script" uid="uid://dmq2dq7vom5yq" path="res://scripts/character.gd" id="1_glpr6"]
+[ext_resource type="PackedScene" uid="uid://dpcsuu3poqdsw" path="res://assets/ui.tscn" id="2_pjt0s"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3quwm"]
 
@@ -18,6 +19,15 @@ height = 0.7784424
 
 [node name="player" type="CharacterBody3D" unique_id=1403002175]
 script = ExtResource("1_glpr6")
+
+[node name="UI" parent="." unique_id=1802677579 instance=ExtResource("2_pjt0s")]
+
+[node name="Control" parent="UI" index="2" unique_id=1627738781 node_paths=PackedStringArray("player")]
+player = NodePath("../..")
+
+[node name="Label2" parent="UI/Control" index="0" unique_id=359892133]
+offset_left = 74.0
+offset_right = 114.0
 
 [node name="Head" type="Node3D" parent="." unique_id=324041503]
 
@@ -49,3 +59,5 @@ mesh = SubResource("SphereMesh_7x8or")
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="gun" unique_id=969216002]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.24826097, -0.7441155, -1.2349861)
 mesh = SubResource("CylinderMesh_edjt2")
+
+[editable path="UI"]

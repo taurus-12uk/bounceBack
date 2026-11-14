@@ -1,30 +1,33 @@
 extends CharacterBody3D
 
-@export var speed := 5.0
+@export var speed := 4.0
+@export var max_health := 50
 
 var health := 50
 var player
 
-@onready var navigation_agent = $NavigationAgent3D
-
-
 func _ready():
+
+	add_to_group("enemy")
+
+	health = max_health
 
 	player = get_tree().get_first_node_in_group("player")
 
+	print(name, " spawned with ", health, " health")
 
-func _physics_process(delta):
+
+func _physics_process(_delta):
 
 	if player == null:
 		return
 
-	navigation_agent.target_position = player.global_position
+	var direction = global_position.direction_to(
+		player.global_position
+	)
 
-	var next_position = navigation_agent.get_next_path_position()
-
-	var direction = global_position.direction_to(next_position)
-
-	velocity = direction * speed
+	velocity.x = direction.x * speed
+	velocity.z = direction.z * speed
 
 	move_and_slide()
 
@@ -33,7 +36,20 @@ func take_damage(amount):
 
 	health -= amount
 
-	print(name, " HP: ", health)
+	print(name, " took ", amount, " damage")
+	print(name, " health = ", health)
 
 	if health <= 0:
-		queue_free()
+		die()
+
+
+func die():
+
+	var player_node = get_tree().get_first_node_in_group("player")
+
+	if player_node != null:
+
+		player_node.kill_count += 1
+
+		print("KILLS: ", player_node.kill_count)
+	queue_free()
