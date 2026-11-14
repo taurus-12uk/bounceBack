@@ -15,12 +15,20 @@ size = Vector3(0.84954834, 0.93408203, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_edjt2"]
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t7iv1"]
+panorama = ExtResource("2_t7iv1")
+
+[sub_resource type="Sky" id="Sky_bexhn"]
+sky_material = SubResource("PanoramaSkyMaterial_t7iv1")
+
 [sub_resource type="Environment" id="Environment_3quwm"]
 background_mode = 2
+sky = SubResource("Sky_bexhn")
 
 [node name="Level" type="Node3D" unique_id=1735142640]
 
 [node name="player" parent="." unique_id=1403002175 instance=ExtResource("1_bexhn")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.0188293, 0.6442484, 0)
 
 [node name="Node3D" type="Node3D" parent="." unique_id=679336077]
 transform = Transform3D(3.866436, 0, 0, 0, 0.20512502, 0, 0, 0, 4.1690598, 0, 0, 0)
