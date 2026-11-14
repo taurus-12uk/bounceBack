@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://d3j2l11o04o8f"]
 
+[ext_resource type="PackedScene" uid="uid://c5whqfiusxfsr" path="res://character.tscn" id="1_bexhn"]
+
 [sub_resource type="NavigationMesh" id="NavigationMesh_edjt2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qhyq2"]
@@ -16,6 +18,8 @@ size = Vector3(0.84954834, 0.93408203, 1)
 background_mode = 2
 
 [node name="Level" type="Node3D" unique_id=1735142640]
+
+[node name="player" parent="." unique_id=1403002175 instance=ExtResource("1_bexhn")]
 
 [node name="Node3D" type="Node3D" parent="." unique_id=679336077]
 transform = Transform3D(3.866436, 0, 0, 0, 0.20512502, 0, 0, 0, 4.1690598, 0, 0, 0)
@@ -142,9 +146,6 @@ mesh = SubResource("BoxMesh_7x8or")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NavigationRegion3D/MeshInstance3D/StaticBody3D" unique_id=2002937591]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 shape = SubResource("BoxShape3D_edjt2")
-
-[node name="player" parent="." unique_id=1403002175 instance=ExtResource("1_bexhn")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.8859265, 0.49235904, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=117520165]
 environment = SubResource("Environment_3quwm")
