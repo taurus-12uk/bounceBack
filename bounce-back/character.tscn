@@ -30,6 +30,7 @@ mesh = SubResource("CapsuleMesh_3quwm")
 shape = SubResource("CapsuleShape3D_r4bg2")
 
 [node name="gun" type="Node3D" parent="." unique_id=1371866996]
+transform = Transform3D(-1.3987644e-08, 0, -0.32, 0, 0.32, 0, 0.32, 0, -1.3987644e-08, 0.09435749, -0.27919757, -0.6199175)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="gun" unique_id=1414482268]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -1.4976256, 0, -1.192)
