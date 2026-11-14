@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dam3pa0nosddg"]
 
+[ext_resource type="Script" uid="uid://m2a0r8io4mvp" path="res://enemy.gd" id="1_7k104"]
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7x8or"]
 radius = 0.8046875
 height = 1.609375
@@ -7,12 +9,28 @@ height = 1.609375
 [sub_resource type="CylinderMesh" id="CylinderMesh_mgcp0"]
 height = 0.7448578
 
-[node name="enemy" type="Node3D" unique_id=758909649]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7x8or"]
+height = 1.6298828
+radius = 0.7988281
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=366153564]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019255757, -0.4636314, 0)
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1266374862]
+script = ExtResource("1_7k104")
+
+[node name="slime_mesh" type="Node3D" parent="." unique_id=515193054]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="slime_mesh" unique_id=366153564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0010102987, -0.4636314, 0)
 mesh = SubResource("CapsuleMesh_7x8or")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1981147035]
-transform = Transform3D(1.5800145, 0, 0, 0, 1.0000007, 0, 0, 0, 1.611385, -0.0061632395, -0.87945527, 0)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="slime_mesh" unique_id=1981147035]
+transform = Transform3D(1.6, 0, 0, 0, 1, 0, 0, 0, 1.6, -0.0061632395, -0.87945527, 0)
 mesh = SubResource("CylinderMesh_mgcp0")
+
+[node name="enemy" type="Node3D" parent="." unique_id=758909649]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1857699801]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.39501953, 0)
+shape = SubResource("CylinderShape3D_7x8or")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=302860571]
+debug_enabled = true
