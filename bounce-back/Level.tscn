@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d3j2l11o04o8f"]
 
 [ext_resource type="PackedScene" uid="uid://c5whqfiusxfsr" path="res://character.tscn" id="1_bexhn"]
+[ext_resource type="Texture2D" uid="uid://dhsg42wsubgbk" path="res://assets/textures/citrus_orchard_road_puresky_4k.hdr" id="2_t7iv1"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_edjt2"]
 
@@ -14,8 +15,15 @@ size = Vector3(0.84954834, 0.93408203, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_edjt2"]
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t7iv1"]
+panorama = ExtResource("2_t7iv1")
+
+[sub_resource type="Sky" id="Sky_bexhn"]
+sky_material = SubResource("PanoramaSkyMaterial_t7iv1")
+
 [sub_resource type="Environment" id="Environment_3quwm"]
 background_mode = 2
+sky = SubResource("Sky_bexhn")
 
 [node name="Level" type="Node3D" unique_id=1735142640]
 
