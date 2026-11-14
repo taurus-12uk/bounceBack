@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c5whqfiusxfsr" path="res://character.tscn" id="1_bexhn"]
 [ext_resource type="PackedScene" uid="uid://dam3pa0nosddg" path="res://enemy.tscn" id="2_t7iv1"]
 [ext_resource type="Material" uid="uid://cmjg5aj7tidgk" path="res://assets/materials/new_standard_material_3d1.tres" id="3_2nifc"]
+[ext_resource type="Texture2D" uid="uid://dhsg42wsubgbk" path="res://assets/textures/sky.hdr" id="4_wkftn"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_edjt2"]
 
@@ -17,6 +18,7 @@ size = Vector3(0.84954834, 0.93408203, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_edjt2"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t7iv1"]
+panorama = ExtResource("4_wkftn")
 
 [sub_resource type="Sky" id="Sky_bexhn"]
 sky_material = SubResource("PanoramaSkyMaterial_t7iv1")
@@ -52,6 +54,7 @@ shape = SubResource("BoxShape3D_bexhn")
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=663592621]
 transform = Transform3D(-2.185569e-08, 0, 0.019999992, 0, 3.8649971, 0, -0.49999973, 0, -8.742272e-10, 0.06500367, 2.3524122, -0.042907063)
 mesh = SubResource("BoxMesh_qhyq2")
+surface_material_override/0 = ExtResource("3_2nifc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/MeshInstance3D8" unique_id=131706340]
 
@@ -62,6 +65,7 @@ shape = SubResource("BoxShape3D_bexhn")
 [node name="MeshInstance3D15" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=236622820]
 transform = Transform3D(0.3, 0, 3.4086488e-16, 0, 3.8649979, 0, -5.1129734e-15, 0, 0.019999987, -0.27816746, 2.352411, 0.12905352)
 mesh = SubResource("BoxMesh_qhyq2")
+surface_material_override/0 = ExtResource("3_2nifc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/MeshInstance3D15" unique_id=643736155]
 
@@ -72,6 +76,7 @@ shape = SubResource("BoxShape3D_bexhn")
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=1362233930]
 transform = Transform3D(-8.742278e-09, 0, 0.02, 0, 3.8649988, 0, -0.19999994, 0, -8.7422747e-10, 0.065, 2.3563907, 0.3869985)
 mesh = SubResource("BoxMesh_qhyq2")
+surface_material_override/0 = ExtResource("3_2nifc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/MeshInstance3D9" unique_id=489832895]
 
@@ -82,6 +87,7 @@ shape = SubResource("BoxShape3D_bexhn")
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=357509717]
 transform = Transform3D(-8.742278e-09, 0, 0.02, 0, 3.864998, 0, -0.19999991, 0, -8.7422736e-10, -0.18582481, 2.3563902, -0.37891605)
 mesh = SubResource("BoxMesh_qhyq2")
+surface_material_override/0 = ExtResource("3_2nifc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/MeshInstance3D10" unique_id=2012251676]
 
@@ -92,6 +98,7 @@ shape = SubResource("BoxShape3D_bexhn")
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=602880750]
 transform = Transform3D(-0.19999991, 0, -1.7484552e-09, 0, 3.8649976, 0, 1.748455e-08, 0, -0.02, -0.18582481, 2.3563898, -0.08830915)
 mesh = SubResource("BoxMesh_qhyq2")
+surface_material_override/0 = ExtResource("3_2nifc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/MeshInstance3D12" unique_id=308432695]
 
@@ -102,6 +109,7 @@ shape = SubResource("BoxShape3D_bexhn")
 [node name="MeshInstance3D13" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=262268673]
 transform = Transform3D(-0.19999991, 0, -1.7484552e-09, 0, 3.8649921, 0, 1.748455e-08, 0, -0.01999997, 0.14613537, 2.3563898, -0.25283256)
 mesh = SubResource("BoxMesh_qhyq2")
+surface_material_override/0 = ExtResource("3_2nifc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/MeshInstance3D13" unique_id=1864377628]
 
@@ -112,6 +120,7 @@ shape = SubResource("BoxShape3D_bexhn")
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=1194926609]
 transform = Transform3D(-8.742278e-09, 0, 0.02, 0, 3.8649983, 0, -0.19999993, 0, -8.742274e-10, -0.18582481, 2.3563905, 0.38699847)
 mesh = SubResource("BoxMesh_qhyq2")
+surface_material_override/0 = ExtResource("3_2nifc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/MeshInstance3D11" unique_id=987591988]
 
@@ -122,6 +131,7 @@ shape = SubResource("BoxShape3D_bexhn")
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=465659701]
 transform = Transform3D(1.1310852, 0, 0, 0, 3.8649385, 0, 0, 0, 0.049999192, -0.0019373297, 2.4259663, 0.47405857)
 mesh = SubResource("BoxMesh_qhyq2")
+surface_material_override/0 = ExtResource("3_2nifc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/MeshInstance3D4" unique_id=1785488120]
 
@@ -132,6 +142,7 @@ shape = SubResource("BoxShape3D_bexhn")
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=2086918257]
 transform = Transform3D(-0.0002923736, 0, -0.04999942, 0, 3.8649554, 0, 1.1310848, 0, -1.2924321e-05, 0.513247, 2.4458215, -0.0022467945)
 mesh = SubResource("BoxMesh_qhyq2")
+surface_material_override/0 = ExtResource("3_2nifc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/MeshInstance3D5" unique_id=292028249]
 
@@ -142,6 +153,7 @@ shape = SubResource("BoxShape3D_bexhn")
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=100532839]
 transform = Transform3D(-0.0002923736, 0, -0.049999192, 0, 3.8649383, 0, 1.1310847, 0, -1.2924261e-05, -0.51565564, 2.425966, -0.0038530638)
 mesh = SubResource("BoxMesh_qhyq2")
+surface_material_override/0 = ExtResource("3_2nifc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/MeshInstance3D6" unique_id=1983005854]
 
@@ -152,6 +164,7 @@ shape = SubResource("BoxShape3D_bexhn")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=1613500530]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 mesh = SubResource("BoxMesh_7x8or")
+surface_material_override/0 = ExtResource("3_2nifc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/MeshInstance3D" unique_id=2062811824]
 
