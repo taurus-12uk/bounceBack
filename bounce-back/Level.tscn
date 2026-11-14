@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d3j2l11o04o8f"]
 
 [ext_resource type="PackedScene" uid="uid://c5whqfiusxfsr" path="res://character.tscn" id="1_bexhn"]
-[ext_resource type="Texture2D" uid="uid://dhsg42wsubgbk" path="res://assets/textures/citrus_orchard_road_puresky_4k.hdr" id="2_t7iv1"]
+[ext_resource type="PackedScene" uid="uid://dam3pa0nosddg" path="res://enemy.tscn" id="2_t7iv1"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_edjt2"]
 
@@ -160,4 +160,7 @@ shape = SubResource("BoxShape3D_edjt2")
 environment = SubResource("Environment_3quwm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1822115764]
-transform = Transform3D(1, 0, 0, 0, 0.77273357, 0.6347305, 0, -0.6347305, 0.77273357, 0, 2.6820571, 2.7663016)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.8732994, 0)
+
+[node name="CharacterBody3D" parent="." unique_id=1266374862 instance=ExtResource("2_t7iv1")]
+transform = Transform3D(-3.380146e-08, 0, 0.07732871, 0, 0.7928078, 0, -0.8338117, 0, -3.644706e-09, 0.25131834, 0.45722455, 1.6015873)
