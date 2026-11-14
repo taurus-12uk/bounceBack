@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c5whqfiusxfsr" path="res://character.tscn" id="1_bexhn"]
 [ext_resource type="PackedScene" uid="uid://dam3pa0nosddg" path="res://enemy.tscn" id="2_t7iv1"]
 [ext_resource type="Material" uid="uid://cmjg5aj7tidgk" path="res://assets/materials/new_standard_material_3d1.tres" id="3_2nifc"]
+[ext_resource type="Texture2D" uid="uid://dhsg42wsubgbk" path="res://assets/textures/sky.hdr" id="4_wkftn"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_edjt2"]
 
@@ -17,6 +18,7 @@ size = Vector3(0.84954834, 0.93408203, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_edjt2"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t7iv1"]
+panorama = ExtResource("4_wkftn")
 
 [sub_resource type="Sky" id="Sky_bexhn"]
 sky_material = SubResource("PanoramaSkyMaterial_t7iv1")
