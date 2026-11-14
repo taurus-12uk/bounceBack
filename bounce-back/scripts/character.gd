@@ -14,7 +14,7 @@ func take_damage(amount):
 	if health <= 0:
 		queue_free()
 const SPEED = 1.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 3.0
 const MOUSE_SENSITIVITY = 0.002
 
 @onready var head = $Head
