@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c5whqfiusxfsr" path="res://character.tscn" id="1_bexhn"]
 [ext_resource type="PackedScene" uid="uid://dam3pa0nosddg" path="res://enemy.tscn" id="2_t7iv1"]
+[ext_resource type="Material" uid="uid://cmjg5aj7tidgk" path="res://assets/materials/new_standard_material_3d1.tres" id="3_2nifc"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_edjt2"]
 
@@ -40,6 +41,7 @@ navigation_mesh = SubResource("NavigationMesh_edjt2")
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=568973233]
 transform = Transform3D(1.1310852, 0, 0, 0, 3.8649557, 0, 0, 0, 0.04999942, -0.0004712987, 2.4458215, -0.48015845)
 mesh = SubResource("BoxMesh_qhyq2")
+surface_material_override/0 = ExtResource("3_2nifc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/MeshInstance3D3" unique_id=917400723]
 
