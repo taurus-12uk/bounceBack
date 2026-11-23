@@ -11,6 +11,7 @@ const CONTROLLER_SENSITIVITY = 2.5
 
 var health := 100
 var ammo := 1
+var kill_count := 0
 
 func _physics_process(delta: float) -> void:
 
@@ -93,12 +94,20 @@ func shoot():
 
 	get_tree().current_scene.add_child(new_ammo)
 
+	# Spawn slightly in front of the player
 	new_ammo.global_position = (
 		head.global_position
 		+ (-head.global_transform.basis.z * 2.0)
 	)
 
-	new_ammo.global_rotation = head.global_rotation
+	# Match where the camera/head is looking
+	new_ammo.global_transform.basis = head.global_transform.basis
+
+	# Tell the ammo its initial direction
+	new_ammo.linear_velocity = (
+		-head.global_transform.basis.z
+		* new_ammo.speed
+	)
 
 	print("Shot fired!")
 

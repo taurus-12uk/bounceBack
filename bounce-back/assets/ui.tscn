@@ -1,51 +1,10 @@
 [gd_scene format=3 uid="uid://dpcsuu3poqdsw"]
 
-[ext_resource type="Script" uid="uid://bjy01g7xiuv8x" path="res://scripts/hud.gd" id="1_etwi0"]
-[ext_resource type="Texture2D" uid="uid://bd5ocoyfsekh" path="res://assets/textures/Slimeball.png" id="2_ohefe"]
 [ext_resource type="Script" uid="uid://dyic17nwyqjry" path="res://scripts/tutorial.gd" id="3_kd4iw"]
+[ext_resource type="Script" uid="uid://cauksuw7aukg1" path="res://scripts/control.gd" id="3_rvqgq"]
 [ext_resource type="Script" uid="uid://bi0impobfbcvj" path="res://scripts/settings.gd" id="4_j0amv"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3quwm"]
-bg_color = Color(0.2123048, 0.21230489, 0.21230471, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4bg2"]
-bg_color = Color(0, 1, 0.13333334, 1)
-
 [node name="UI" type="CanvasLayer" unique_id=1802677579]
-
-[node name="HUD" type="Control" parent="." unique_id=1490092077]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("1_etwi0")
-
-[node name="HealthBar" type="ProgressBar" parent="HUD" unique_id=1607655551]
-layout_mode = 0
-offset_left = 767.0
-offset_top = 61.0
-offset_right = 1100.0
-offset_bottom = 117.0
-theme_override_styles/background = SubResource("StyleBoxFlat_3quwm")
-theme_override_styles/fill = SubResource("StyleBoxFlat_r4bg2")
-value = 100.0
-rounded = true
-show_percentage = false
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD" unique_id=2038390551]
-layout_mode = 0
-offset_left = 61.0
-offset_top = 34.0
-offset_right = 161.0
-offset_bottom = 134.0
-
-[node name="TextureRect" type="TextureRect" parent="HUD/HBoxContainer" unique_id=606471309]
-layout_mode = 2
-texture = ExtResource("2_ohefe")
-expand_mode = 2
-
-[node name="Label" type="Label" parent="HUD/HBoxContainer" unique_id=497834796]
-layout_mode = 2
 
 [node name="tutorial" type="Control" parent="." unique_id=296222811]
 layout_mode = 3
@@ -88,3 +47,21 @@ offset_top = 12.0
 offset_right = 96.0
 offset_bottom = 35.0
 text = "Main Menu"
+
+[node name="Control" type="Control" parent="." unique_id=1627738781]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_rvqgq")
+
+[node name="Label2" type="Label" parent="Control" unique_id=359892133]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label" type="Label" parent="Control" unique_id=2115946816]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "kills: "
