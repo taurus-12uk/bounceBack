@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ievkkq86e7rq"]
 
-[ext_resource type="Script" uid="uid://wylc3xfcit80" path="res://ammo_pickup.gd" id="1_fs8dk"]
+[ext_resource type="Script" uid="uid://wylc3xfcit80" path="res://scripts/ammo_pickup.gd" id="1_fs8dk"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mgcp0"]
 
